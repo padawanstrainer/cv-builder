@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Abyssinica+SIL&family=Kumbh+Sans:wght@700;900&family=Roboto:wght@300&display=swap');
+@import url('./graficos.css');
+/*
+font-family: 'Abyssinica SIL', serif;
+font-family: 'Kumbh Sans', sans-serif;
+font-family: 'Roboto', sans-serif;
+*/
+
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  background: #EAEAEA;
+  font-family: 'Abyssinica SIL', serif;
+}
+
+header, main{
+  padding: 0px;
+  width: 90vw;
+  margin: 0 auto;
+}
+
+header{
+  padding: 2vh 2vw;
+  display: flex;
+  background: white;
+}
+
+section{
+  background: white;
+}
+
+
+header div{
+  width: calc( 34% - 1vw );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 2vw;
+}
+
+header div > *{
+  order: 2;
+  margin: 0;
+}
+
+header div img{
+  order: 1;
+  border-radius: 50%;
+  border: 5px solid white;
+}
+
+header a{
+  width: 66%;
+  border: 1px solid red;
+  height: 40vh;
+}
+
+h1, h2, h3{
+  font-family: 'Kumbh Sans', sans-serif;
+  font-weight: 700;
+}
+
+h1{
+  text-transform: uppercase;
+  font-size: 24px;
+}
+
+
+
+section:not(.info):not(.about) h2{
+  position: relative;
+  margin-top: 0;
+  font-weight: 900;
+  text-transform: uppercase;
+  background: #223D4D;
+  color: white;
+  padding-top: .73em;
+  padding-bottom: .73em;
+  line-height: 100%;
+}
+
+:where( section:not(.info):not(.about) ) h2{
+  padding-left: calc( 2em + ( .73em * 2 ));
+}
+
+
+section:not(.info):not(.about):not(.large) h2::before{
+  content: '';
+  background: red url(/assets/iconos/castor.png) center/calc( ( 1em + ( .73em * 2 ) ) * .8 ) no-repeat;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  display: block;
+  width: calc( 1em + ( .73em * 2 ) );
+}
+
+section.large h2{
+  padding-left: 0;
+  text-align: center;
+}
+
+section:not(.info):not(.about) ul{
+  list-style: none;
+}
+
+section.laboral ul li,
+section.academica ul li{
+  margin-bottom: 3em;
+}
+
+main{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between ;
+  gap: 10px 0;
+  margin-bottom: 25vh;
+}
+
+main section{
+  width: calc( 50% - 5px );
+}
+
+main section.info{
+  width: 34%;
+}
+
+main section.about{
+  width: 66%;
+}
+
+main section.info h2{
+  display: none;
+}
+
+main section.about h2{
+  text-transform: uppercase;
+  font-size: 1.75em;
+}
+
+main section.info ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+main section.info ul:nth-of-type(1){
+  margin: 1vw 2vw;
+}
+
+main section.info ul:nth-of-type(1) li{
+  padding: .5em 0;
+  border-bottom: 1px solid #adadad;
+  display: flex;
+  letter-spacing: .5px;
+}
+
+main section.info ul:nth-of-type(1) li span:nth-child(1){
+  width: 120px;
+}
+
+main section.info ul:nth-of-type(1) li span:nth-child(2){
+  flex: 1;
+  margin-left: 10px;
+}
+
+main section.info ul:nth-of-type(2){
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 2vh;
+}
+
+main section.info ul:nth-of-type(2) a{
+  display: block;
+  width: 22px;
+  height: 22px;
+  background: cyan;
+  font-size: 0;
+}
+
+main section.large{
+  width: 100%;
+}
+
+main section.intereses ul{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+main section.intereses ul li{
+  width: 75px;
+  padding-top: 80px;
+  background: url(/assets/iconos/castor-black.png) center top/contain no-repeat;
+  text-align: center;
+  font-size: .8em;
+  margin-bottom: 3em;
+}
+
+main section.referencias ul li{
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 2vw;
+}
+
+main section.referencias ul li > img{
+  order: 1;
+  border-radius: 50%;
+  height: 50px;
+  margin-right: 1em;
+}
+
+main section.referencias ul li > *{
+  order: 2;
+}
+
+main section.referencias ul li h3{
+  margin: 0;
+  text-transform: uppercase;
+}
+
+main section.referencias ul li p{
+  width: 100%;
+}
+
+main section.referencias ul li span{
+  font-size: 0.9em;
+}
+
+main section.extra-skills ul{
+  column-count: 2;
+}
+
+main section.extra-skills ul li{
+  margin-bottom: 1.5em;
+}
+
+.tagline{
+  font-family: 'Roboto', sans-serif;
+}

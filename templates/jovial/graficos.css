@@ -1,0 +1,107 @@
+/* barras */
+@keyframes barrita{
+  from{
+    width: 0;
+  }
+  to{
+    width: var(--porcentaje);
+  }
+}
+
+.skills ul.barrita{
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 2vw;
+  font-family: 'Kumbh Sans', sans-serif;
+  justify-content: space-between;
+}
+
+.skills ul.barrita li{
+  width: 48%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 2em;
+}
+
+
+.skills ul.barrita li span:nth-child(1){
+  flex: 1;
+}
+
+.skills ul.barrita li div{
+  height: 10px;
+  background: #eaeaea;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 8px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.skills ul.barrita li div span{
+  display: block;
+  height: 8px;
+  background: var(--primary);
+  width: 0;
+  border-radius: 4px;
+}
+
+.skills ul.barrita.animate li div span{
+  animation: barrita 0.75s linear 1 forwards;
+}
+
+/* circular */
+@keyframes circulitos{
+  to{
+    stroke-dasharray: 0 100;
+  }
+}
+
+.skills ul.circulitos{
+  display: flex;
+  gap: 20px;
+  --radius: 60px;
+  --border: 12px;
+}
+.skills ul.circulitos h3{
+  text-align: center;
+}
+
+.skills ul.circulitos div{
+  padding: 10px;
+  position: relative;
+}
+
+.skills ul.circulitos div span{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 35px
+}
+
+.skills ul.circulitos svg{
+  width: calc( ( var(--radius) * 2 ) + var(--border));
+  height: calc( ( var(--radius) * 2 ) + var(--border));
+  stroke: #ccc;
+  fill: none;
+  stroke-width: var(--border);
+}
+
+.skills ul.circulitos svg circle{
+  stroke-width: var(--border);
+}
+
+
+.skills ul.circulitos svg circle:nth-child(2){
+  stroke: var(--primary);
+  stroke-dasharray: 0 100;
+  stroke-dashoffset: 25;
+  stroke-linecap: round;
+}
+
+.skills ul.circulitos.animate svg circle:nth-child(2){
+  stroke-dasharray: var(--porcentaje) calc(100 - var(--porcentaje));
+  animation: circulitos .75s linear 1 reverse forwards;
+}
