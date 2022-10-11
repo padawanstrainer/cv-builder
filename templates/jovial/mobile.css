@@ -1,0 +1,24 @@
+header{
+  flex-wrap: wrap;
+}
+
+header div,
+header a,
+main section.about,
+main section.info,
+main section{
+  width: 100%;
+}
+
+.skills ul.barrita li{
+  width: 100%;
+}
+.skills ul.circulitos{
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+
+

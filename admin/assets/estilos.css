@@ -1,0 +1,17 @@
+body{
+  font-size: 20px;
+}
+
+form fieldset > div{
+  margin-bottom: 4px;
+  display: flex;
+}
+
+form fieldset > div span{
+  width: 250px;
+}
+
+form fieldset > div span + *{
+  flex: 1;
+  padding: 4px;
+}

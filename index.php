@@ -1,3 +1,7 @@
+<?php 
+require 'admin/config/funciones.php';
+require 'admin/config/data.php';
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,11 +14,11 @@
 <body>
   <header>
     <div>
-      <h1>Nina Rodríguez</h1>
-      <img src="assets/img/perfil.jpg" alt="Nombre de la persona" />
-      <p>Minina mimosa gatuna felina</p>
+      <?php 
+      echo create_user_data( );
+      ?>
     </div>
-    <a href='javascript:void(0)'>Videopresentación</a>
+    <a href='javascript:void(0)' id="videopresentacion">Videopresentación</a>
   </header>
   <main>
     <section class='info'>
@@ -38,11 +42,10 @@
     </section>
 
     <section class='about'>
-      <h2>Sobre mí</h2>
-      <p>Scratch leg; meow for can opener to feed me plop down in the middle where everybody walks and swat turds around the house for mewl for food at 4am eat half my food and ask for more purr while eating, or flop over. Intrigued by the shower tuxedo cats always looking dapper so dead stare with ears cocked but eat the fat cats food freak human out make funny noise mow mow mow mow mow mow success now attack human.<br />
-      Cat snacks. Steal the warm chair right after you get up lick butt and make a weird face instantly break out into full speed gallop across the house for no reason.</p>
-
-      <a href='assets/docs/curriculum.pdf' download="Curriculum-Nina-Rodriguez.pdf">Descargar mi CV</a>
+      <?php 
+      create_about_me( );
+      ?>
+      <a id="download" href='assets/docs/curriculum.pdf' download="Curriculum-Nina-Rodriguez.pdf"><span>Descargar mi CV</span></a>
     </section>
 
     <section class='laboral'>
@@ -208,5 +211,9 @@
     </section>
   </main>
   <script src="/templates/jovial/porcentajes.js"></script>
+  <script>
+    const id_video = '<?php echo $json_user_data["video"];?>';
+  </script>
+  <script src="/templates/jovial/video.js"></script>
 </body>
 </html>
