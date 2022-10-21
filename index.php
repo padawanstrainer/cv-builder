@@ -23,55 +23,31 @@ require 'admin/config/data.php';
   <main>
     <section class='info'>
       <h2>Información general</h2>
-      <ul>
-        <li><span>Date of Birth</span>: <span>May 26th, 1986</span></li>
-        <li><span>Phone</span>: <span>123-456-7890</span></li>
-        <li><span>Email</span>: <span>yourmail@gamil.com</span></li>
-        <li><span>Gender</span>: <span>Male</span></li>
-        <li><span>Marital Status</span>: <span>Single</span></li>
-        <li><span>Address</span>: <span>218 Tropical Center, New Elephant Road.</span></li>
-      </ul>
-
-      <ul>
-        <li><a href='https://facebook.com/falopa'>Facebook</a></li>
-        <li><a href='https://instragram.com/falopa'>Instagram</a></li>
-        <li><a href='https://behance.com/falopa'>Behance</a></li>
-        <li><a href='https://linkedin.com/falopa'>LinkedIn</a></li>
-        <li><a href='https://twitter.com/falopa'>Twitter</a></li>
-      </ul>
+      <?php 
+      echo create_personal_info( );
+      ?>
     </section>
 
     <section class='about'>
       <?php 
-      create_about_me( );
+      echo create_about_me( );
       ?>
       <a id="download" href='assets/docs/curriculum.pdf' download="Curriculum-Nina-Rodriguez.pdf"><span>Descargar mi CV</span></a>
     </section>
 
     <section class='laboral'>
       <h2>Experiencia Laboral</h2>
-      <ul>
-        <li>
-          <h3>CODEXCODER</h3>
-          <span class='tagline'>UI/UX DESIGNER @ 2016 – Present (2 years 9 months)</span>
-          <p>Proressive orchestrate vertical scenarios throulis ordstinctive services Continually innovate fully tested scenarios with</p>
-        </li>
-        <li>
-          <h3>LABARTISAN</h3>
-          <span class='tagline'>GRAPHICS DESIGN @ 2011 – 2014 (3 YEARS)</span>
-          <p>Proressive orchestrate vertical scenarios throulis ordstinctive services Continually innovate fully tested scenarios with</p>
-        </li>
-        <li>
-          <h3>WEBCODE LTD</h3>
-          <span class='tagline'>JUNIOR CONCEPT ARTIST @ 2005 – 2009 (4 YEARS)</span>
-          <p>Proressive orchestrate vertical scenarios throulis ordstinctive services Continually innovate fully tested scenarios with</p>
-        </li>
-      </ul>
+      <?php 
+      echo create_job_experience( );
+      ?>
     </section>
   
     <section class='academica'>
       <h2>Formación Académica</h2>
-      <ul>
+      <?php 
+      echo create_academic_info( );
+      ?>
+      <!--ul>
         <li>
           <h3>CODEXCODER</h3>
           <span class='tagline'>MASTER OF COMPUTER SCIENCE @ 2016 – Present (2 years 9 months)</span>
@@ -87,7 +63,7 @@ require 'admin/config/data.php';
           <span class='tagline'>GENERAL EDUCATION DEVELOPMENT (GED)  @ 2005 – 2009 (4 YEARS)</span>
           <p>Proressive orchestrate vertical scenarios throulis ordstinctive services Continually innovate fully tested scenarios with</p>
         </li>
-      </ul>
+      </ul-->
     </section>
     <section class='large skills'>
       <h2>Habilidades personales y lenguajes que manejo</h2>

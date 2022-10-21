@@ -1,10 +1,14 @@
 body{
   font-size: 20px;
+  padding-bottom: 400px;
+}
+
+form fieldset > div:not(.row){
+  display: flex;
 }
 
 form fieldset > div{
   margin-bottom: 4px;
-  display: flex;
 }
 
 form fieldset > div span{
@@ -14,4 +18,10 @@ form fieldset > div span{
 form fieldset > div span + *{
   flex: 1;
   padding: 4px;
+}
+
+
+
+#datos_personales .row:empty::before{
+  content: 'No hay datos personales';
 }

@@ -6,4 +6,5 @@ function get_json( $filename ){
 }
 
 $json_user_data = get_json('about.json');
-#$json_jobs = get_json('jobs.json');
+$json_jobs = get_json('experiencias.json');
+$json_academic = get_json('ahyorya.json');
