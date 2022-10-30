@@ -199,7 +199,7 @@ main section.intereses ul{
 main section.intereses ul li{
   width: 75px;
   padding-top: 80px;
-  background: url(/assets/iconos/castor-black.png) center top/contain no-repeat;
+  background: none center top/contain no-repeat;
   text-align: center;
   font-size: .8em;
   margin-bottom: 3em;

@@ -8,7 +8,7 @@ require 'admin/config/data.php';
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nina Rodríguez | CV</title>
+  <title><?php echo $json_user_data['nombre']; ?> | CV</title>
   <link rel="stylesheet" href="templates/jovial/estilos.css" />
 </head>
 <body>
@@ -67,12 +67,17 @@ require 'admin/config/data.php';
     </section>
     <section class='large skills'>
       <h2>Habilidades personales y lenguajes que manejo</h2>
-
+      <?php if($json_skills['formato'] == 'Barras' ): ?>
       <ul class='barrita'>
+        <?php foreach($json_skills['skills'] as $skill): 
+        echo <<<HTML
         <li>
-            <span>HTML CSS</span><span>40%</span>
-            <div style="--porcentaje: 40%; --primary: fuchsia"><span></span></div>
+            <span>$skill[nombre]</span><span>$skill[porcentaje]%</span>
+            <div style="--porcentaje: $skill[porcentaje]%; --primary: $skill[color]"><span></span></div>
         </li>
+HTML;
+        endforeach; ?>
+        <!-- 
         <li>
             <span>Javascript</span><span>70%</span>
             <div style="--porcentaje: 70%; --primary: teal"><span></span></div>
@@ -97,20 +102,26 @@ require 'admin/config/data.php';
             <span>Word</span><span>99%</span>
             <div style="--porcentaje: 99%; --primary: DarkKhaki"><span></span></div>
         </li>
+        -->
       </ul>
-
+      <?php else:?>
       <ul class='circulitos'>
+      <?php foreach($json_skills['skills'] as $skill): 
+        echo <<<HTML
         <li>
-          <h3>HTML y CSS</h3>
-          <div style="--porcentaje: 100; --primary: teal">
+          <h3>$skill[nombre]</h3>
+          <div style="--porcentaje: $skill[porcentaje]; --primary: $skill[color]">
             <svg>
               <circle r="60" cx="50%" cy="50%" />
               <circle r="60" cx="50%" cy="50%" pathLength="100" />
             </svg>
-            <span>100%</span>
+            <span>$skill[porcentaje]%</span>
           </div>
         </li>
-        <li>
+HTML;
+        endforeach; ?>
+        <!-- 
+          <li>
           <h3>Javascript</h3>
           <div style="--porcentaje: 75; --primary: fuchsia">
             <svg>
@@ -130,36 +141,49 @@ require 'admin/config/data.php';
             <span>50%</span>
           </div>
         </li>
+      -->
       </ul>
+      <?php endif; ?>
     </section>
 
     <section class='intereses'>
       <h2>Intereses y Hobbies</h2>
       <ul>
-        <li>Correr</li>
-        <li>Siestas largas</li>
-        <li>Cazar</li>
-        <li>Radio</li>
-        <li>Comer</li>
-        <li>Jugar</li>
-        <li>Pescado</li>
-        <li>Mimos</li>
-        <li>Testear la gravedad</li>
-        <li>Codear de madrugada</li>
+        <?php 
+        foreach( $json_hobbies as $h ):
+          echo "<li style='background-image:  url(/assets/iconos/$h[icono])'>$h[nombre]</li>";
+        endforeach; ?><!-- 
+        <li style='background-image:  url(/assets/iconos/castor-black.png)'>Siestas largas</li>
+        <li style='background-image:  url(/assets/iconos/castor-black.png)'>Cazar</li>
+        <li style='background-image:  url(/assets/iconos/castor-black.png)'>Radio</li>
+        <li style='background-image:  url(/assets/iconos/castor-black.png)'>Comer</li>
+        <li style='background-image:  url(/assets/iconos/castor-black.png)'>Jugar</li>
+        <li style='background-image:  url(/assets/iconos/castor-black.png)'>Pescado</li>
+        <li style='background-image:  url(/assets/iconos/castor-black.png)'>Mimos</li>
+        <li style='background-image:  url(/assets/iconos/castor-black.png)'>Testear la gravedad</li>
+        <li style='background-image:  url(/assets/iconos/castor-black.png)'>Codear de madrugada</li> -->
       </ul>
     </section>
 
     <section class='referencias'>
       <h2>Referencias</h2>
       <ul>
+        <?php 
+        foreach( $json_recomendaciones as $rec ):
+          $info = nl2br( $rec['info'] ); //new line 2 (a) <br>
+          echo <<<HTML
         <li>
           <div>
-            <h3>Don Gato</h3>
-            <span class='tagline'>Líder de la Pandilla</span>
+            <h3>$rec[nombre]</h3>
+            <span class='tagline'>$rec[cargo]</span>
           </div>
-          <img src="assets/img/don-gato.jpg" alt="Don Gato" />
-          <p>Scratch leg; meow for can opener to feed me plop down in the middle where everybody walks and swat turds around the house for mewl for food at 4am eat half my food and ask for more purr while eating, or flop over.</p>
+          <img src="assets/img/$rec[imagen]" alt="Don Gato" />
+          <p>$info.</p>
         </li>
+HTML;
+        endforeach;
+        ?>
+        <!--
         <li>
           <div>
             <h3>Garfield</h3>
@@ -168,12 +192,17 @@ require 'admin/config/data.php';
           <img src="assets/img/garfield.jpg" alt="Garfield" />
           <p>Scratch leg; meow for can opener to feed me plop down in the middle where everybody walks and swat turds around the house for mewl for food at 4am eat half my food and ask for more purr while eating, or flop over.</p>
         </li>
+      -->
       </ul>
     </section>
     <section class='large extra-skills'>
       <h2>Habilidades adicionales</h2>
       <ul>
-        <li>Compellingly productize virtual solutions for user</li>
+        <?php foreach($json_otros as $o ):
+        echo "<li>$o</li>";
+        endforeach;
+        ?>
+        <!-- 
         <li>Interactively actualize synergistic resources</li>
         <li>Collaboratively engineer pandemic growth ategies</li>
         <li>Progressively maximize multimedia based narios</li>
@@ -183,6 +212,7 @@ require 'admin/config/data.php';
         <li>Collaboratively engineer pandemic growth ategies</li>
         <li>Progressively maximize multimedia based narios</li>
         <li>Actualize synergistic resources for efficient</li>
+      -->
       </ul>
     </section>
   </main>

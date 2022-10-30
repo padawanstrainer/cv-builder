@@ -1,0 +1,30 @@
+{
+    "formato": "Barras",
+    "skills": [
+        {
+            "nombre": "HTML y CSS",
+            "porcentaje": "95",
+            "color": "#ff0feb"
+        },
+        {
+            "nombre": "Javascript",
+            "porcentaje": "88",
+            "color": "#284da4"
+        },
+        {
+            "nombre": "Dise\u00f1o UI\/UX",
+            "porcentaje": "10",
+            "color": "#489217"
+        },
+        {
+            "nombre": "PHP y MySQL",
+            "porcentaje": "75",
+            "color": "#ff9500"
+        },
+        {
+            "nombre": "Cerrar puertas",
+            "porcentaje": "75",
+            "color": "#48429e"
+        }
+    ]
+}

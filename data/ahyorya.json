@@ -1,16 +1,23 @@
 [
     {
-        "instituto": "Mi escuelita",
-        "titulo": "Sala naranja",
-        "desde": "1999",
-        "hasta": "2018",
-        "info": "dsadsa dasd asd ad"
+        "instituto": "Colegio Salesiano El Sufragio",
+        "titulo": "Primaria",
+        "desde": "2001-03-01",
+        "hasta": "2008-12-26",
+        "info": "Educaci\u00f3n inicial primaria."
     },
     {
-        "instituto": "asdasd",
-        "titulo": "dsadasdas",
-        "desde": "1111",
-        "hasta": "2222",
-        "info": "adssadasdsa"
+        "instituto": "EMETA",
+        "titulo": "Secundario completo",
+        "desde": "2009-03-01",
+        "hasta": "2014-12-28",
+        "info": "Educaci\u00f3n secundaria de nivel superior."
+    },
+    {
+        "instituto": "Maip\u00fa 15",
+        "titulo": "Dise\u00f1o Gr\u00e1fico",
+        "desde": "2021-03-30",
+        "hasta": "",
+        "info": "Bases del dise\u00f1o, tipograf\u00eda, color, grilla, etc."
     }
 ]

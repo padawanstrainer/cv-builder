@@ -15,5 +15,5 @@ let observador = new IntersectionObserver(
 
 const ulBarritas = document.querySelector('.skills .barrita');
 const ulCirculitos = document.querySelector('.skills .circulitos');
-observador.observe( ulBarritas );
-observador.observe( ulCirculitos );
+if( ulBarritas ) observador.observe( ulBarritas );
+if( ulCirculitos ) observador.observe( ulCirculitos );

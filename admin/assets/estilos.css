@@ -1,10 +1,66 @@
+/*
+fuchsia de emergencia: E03FB5
+*/
 body{
   font-size: 20px;
-  padding-bottom: 400px;
+  margin: 0;
+  font-family: 'Rubik', sans-serif;
+}
+
+h1{
+  background: linear-gradient(to bottom, #1A4034, #1C4D3E );
+  margin: 0;
+  padding: 30px;
+  color: white;
+  font-family: 'Lilita One', cursive;
+  font-weight: normal;
+}
+
+h2, h3, legend{
+  font-family: 'Righteous', cursive;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+input, textarea, select{
+  font-family: inherit;
+  font-size: 0.8em;
+  resize: none;
+  outline: none;
+}
+
+form{
+  width: 1000px;
+  margin: auto;
+}
+
+form fieldset{
+  padding: 10px;
+  margin: 20px 0;
+  border: 2px solid #A2AFAD;
+  border-radius: 6px;
+}
+
+form fieldset legend{
+  background: #2E718B;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 3px;
 }
 
 form fieldset > div:not(.row){
   display: flex;
+  gap: 5px;
+}
+
+form fieldset > div:not(.row):not( .v-top ){
+  align-items: center;
+}
+
+
+form fieldset > div.v-top span{
+  display: block;
+  width: 100%;
 }
 
 form fieldset > div{
@@ -13,6 +69,7 @@ form fieldset > div{
 
 form fieldset > div span{
   width: 250px;
+  font-size: .9em; /* 16px x .9 */
 }
 
 form fieldset > div span + *{
@@ -20,8 +77,148 @@ form fieldset > div span + *{
   padding: 4px;
 }
 
+.row-item{
+  display: flex;
+  margin-bottom: 5px;
+}
+.row-item input{
+  padding: 3px 5px;
+  border: 1px solid #cecece;
+}
 
+.row-item input:first-child{
+  flex: 1;
+  border-right: none;
+  background: #ededed;
+  border-radius: 4px 0 0 4px;
+}
+.row-item input:nth-child(2){
+  flex: 3;
+  border-left: none;
+}
+
+.row-item .color_label{
+  background: #ededed;
+  padding: 0 5px;
+  flex: 1;
+  text-align: right; 
+  font-size: .8em;
+}
+.row-item .color_label + input{
+  border-left: none;
+}
+
+.row-skill input:nth-child(1){
+  flex: 4;
+}
+.row-skill input:nth-child(2){
+  flex: 2;
+}
+.row-skill span:nth-child(3){
+  flex: 2;
+}
+.row-skill input:nth-child(4){
+  flex: 1;
+}
+
+.row-box a,
+.row-item a{
+  background: #A53939;
+  color: white;
+  text-decoration: none;
+  padding: 0 10px;
+  border-radius: 0 4px 4px 0;
+}
+
+.row-box a:hover,
+.row-item a:hover{
+  background-color: #832929;
+}
+
+.row-box{
+  padding: 9px 15px;
+}
+.row-box:hover{
+  background: #ededed;
+}
+
+.row-box:not(:last-child){
+  border-bottom: 2px solid #cecece;
+}
+
+.row-box > div{
+  display: flex;
+  margin-bottom: 2px;
+}
+
+.row-box div input,
+.row-box div textarea{
+  border: 1px solid #cecece;
+  flex: 1;
+  padding: 3px 6px;
+}
+.row-box a{
+  border-radius: 0;
+  display: block;
+  width: fit-content;
+  margin-bottom: 5px;
+  padding: 5px 10px;
+  font-size: 0.8em;
+  margin-left: auto;
+}
+
+
+button[type=submit]{
+  background: #0A642C url(./icon_save.png) center/60% no-repeat;
+  filter: invert(1) brightness(0.8);
+  border-radius: 50%;
+  border: none;
+  display: block;
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  bottom: 30px;
+  left: 20px;
+  font-size: 0;
+  padding: 30px;
+}
+
+button[type=submit]:hover{
+  filter: invert(1) brightness(1);
+
+}
 
 #datos_personales .row:empty::before{
   content: 'No hay datos personales';
+}
+
+.disclaimer{
+   margin-top: 200px;
+   font-size: .7em;
+   color: silver;
+   padding: 20px;
+   font-weight: bold;
+   transition: .15s;
+}
+
+.disclaimer:hover{
+  color: darkred;
+  background: pink;
+}
+
+.add-item{
+  padding: 8px 15px 8px 40px;
+  background: #E03FB5 url(./icon_add.png) 10px center/20px no-repeat;
+  border: none;
+  color: white;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+#habilidades > div{
+  margin-bottom: 10px;
+}
+
+#recomendaciones img{
+  height: 1.5em;
 }

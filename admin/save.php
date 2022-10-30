@@ -82,5 +82,70 @@ if( isset( $_POST['ac_instituto'] ) ){
 }
 write_json( "../data/ahyorya.json", $academico );
 
+$habilidades = [];
+if( isset($_POST['skills_name'] ) ){
+  foreach( $_POST['skills_name'] as $indice => $nombre ){
+    $habilidades[] = [
+      'nombre' => $nombre,
+      'porcentaje' => $_POST['skills_value'][$indice],
+      'color' => $_POST['skills_color'][$indice]
+    ];
+  }
+}
+
+write_json('../data/skills.json', [
+    'formato' => $_POST['skills_formato'],
+    'skills' => $habilidades
+  ] );
+
+
+
+$hobbies = [];
+if( isset($_POST['hobbie_name'] ) ){
+  foreach( $_POST['hobbie_name'] as $indice => $nombre ){
+    $hobbies[] = [
+      'nombre' => $nombre,
+      'icono' => $_POST['hobbie_icon'][$indice]
+    ];
+  }
+}
+
+write_json('../data/hobbies.json',  $hobbies );
+
+
+$recomendaciones = [];
+if( isset( $_POST['rec_name'] ) ){
+  foreach( $_POST['rec_name'] as $indice => $nombre ){
+    $nombre_archivo = null;
+    if( $_FILES['rec_imagen']['size'][$indice] > 0 ){
+      $ext = pathinfo( $_FILES['rec_imagen']['name'][$indice], PATHINFO_EXTENSION);
+      $nombre_archivo = sha1( $_FILES['rec_imagen']['tmp_name'][$indice] ).'.'.$ext;
+      move_uploaded_file( $_FILES['rec_imagen']['tmp_name'][$indice], "../assets/img/$nombre_archivo" );
+
+      if( isset( $_POST['rec_prev_foto'][$indice] ) ){
+        $nombre_foto = $_POST['rec_prev_foto'][$indice];
+        if( file_exists( "../assets/img/$nombre_foto" ) ) unlink( "../assets/img/$nombre_foto" );
+      }
+
+    }else if( isset( $_POST['rec_prev_foto'][$indice] ) ){
+      $nombre_archivo = $_POST['rec_prev_foto'][$indice];
+    }
+  
+    $recomendaciones[] = [
+      'nombre' => $nombre,
+      'cargo' =>  $_POST['rec_relacion'][$indice],
+      'info' =>  $_POST['rec_info'][$indice],
+      'imagen' =>  $nombre_archivo
+    ];
+  }
+}
+write_json( "../data/recomendaciones.json", $recomendaciones );
+
+
+if( isset($_POST['otros_name'] ) ){
+  write_json('../data/otros.json',  $_POST['otros_name'] );
+}else{
+  write_json('../data/hobbies.json', [ ] );
+}
 
 header("Location: index.php");
